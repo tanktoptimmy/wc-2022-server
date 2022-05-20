@@ -11,7 +11,7 @@ const handler = async (req, res) => {
     res.json({status: 200, data: goal})
   }
   catch(err) {
-    return console.log("err:", err)
+    return console.log("err2:", err)
   }
   finally {
     dbConnection.close()
