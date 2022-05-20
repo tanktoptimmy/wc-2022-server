@@ -2,7 +2,7 @@ import clientPromise from '@/lib/mongodb'
 
 const handler = async (req, res) => {
   console.log("poo")
-  res.json({status:200, data:"poo"})
+  return res.json({status:200, data: req.body})
   // let dbConnection;
   // try {
   //   console.log(req.body)
