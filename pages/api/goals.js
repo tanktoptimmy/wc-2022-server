@@ -2,7 +2,7 @@ import clientPromise from '@/lib/mongodb'
 
 const handler = async (req, res) => {
   // Get data from your database
-  console.log(req.body)
+  console.log("poo")
   // const dbConnection = await clientPromise;
   // const db = dbConnection.db();
   // db.collection("goal").insertOne(req.body, (err, res) => {
