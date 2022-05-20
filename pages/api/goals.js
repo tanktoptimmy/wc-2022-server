@@ -5,7 +5,7 @@ const handler = async (req, res) => {
   try {
     dbConnection = await clientPromise;
     const db = dbConnection.db('wc');
-    const goal = await db.collection("goal").updateOne(req.body, { upsert: true });
+    const goal = await db.collection("goal").insertOne(req.body);
     res.json({ status: 200, data: goal })
   }
   catch(err) {
