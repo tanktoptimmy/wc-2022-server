@@ -10,7 +10,7 @@ const handler = async (req, res) => {
   //   // response.json(res)
   //   console.log("poo")
   // })
-  res.json({req.body})
+  res.json({body: req.body})
 }
 
 export default handler;
