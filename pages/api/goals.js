@@ -1,16 +1,23 @@
-// import connectToDatabase from '@/lib/mongodb';
+import clientPromise from '@/lib/mongodb'
 
 const handler = async (req, res) => {
-  // console.log(1)
-  // const db = await connectToDatabase();
-  // // Insert the event object, which is the test data we pass in
-  // const result = await db.collection("goals").insertOne(req.body);
-  // console.log(2)
-  const response = {
-    statusCode: 200,
-    body: "poo"//JSON.stringify(result),
-  };
-  return response;
-};
+  console.log("poo")
+  res.json({status:200, data:"poo"})
+  // let dbConnection;
+  // try {
+  //   console.log(req.body)
+  //   dbConnection = await clientPromise;
+  //   const db = dbConnection.db('wc');
+  //   const goal = await db.collection("goal").insertOne(req.body);
+  //   console.log("goal:", goal)
+  //   res.json({status: 200, data: goal})
+  // }
+  // catch(err) {
+  //   return console.log("err:", err)
+  // }
+  // finally {
+  //   dbConnection.close()
+  // }
+}
 
 export default handler;
