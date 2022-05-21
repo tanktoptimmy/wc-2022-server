@@ -1,31 +1,19 @@
-// import connectToDatabase from '@/lib/mongodb';
-
-// const handler = async (req, res) => {
-//   const db = await connectToDatabase();
-//   const goal = req.body;
-//   console.log(goal)
-//   // Insert the event object, which is the test data we pass in
-//   await db.collection("goals").replaceOne({"_id": goal._id}, goal, {upsert: true});
-//   const response = {
-//     statusCode: 200,
-//     data: JSON.stringify(goal)
-//   };
-//   res.json(response);
-// };
-
-// export default handler;
-
-import { useRouter } from 'next/router'
+import connectToDatabase from '@/lib/mongodb';
 
 const handler = async (req, res) => {
-
-  const router = useRouter()
-  const { type } = router.query
-  console.log("type:", type)
-  const obj = req.body;
-  console.log(obj)
+  const db = await connectToDatabase();
+  const { _id } = req.body;
+  const { type } = req.query
   
-  res.json({status: 200});
+  // Insert the event object, which is the test data we pass in
+  await db.collection(type).remove({"_id": _id});
+  const response = {
+    statusCode: 200,
+    data: JSON.stringify(goal)
+  };
+  res.json(response);
 };
 
 export default handler;
+
+
