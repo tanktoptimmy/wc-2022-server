@@ -11,6 +11,7 @@ const handler = async (req, res) => {
     data: JSON.stringify(goal)
   };
   res.json(response);
+  connectToDatabase.close();
 };
 
 export default handler;
