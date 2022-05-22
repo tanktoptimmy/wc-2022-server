@@ -2,9 +2,10 @@ import connectToDatabase from '@/lib/mongodb';
 
 const handler = async (req, res) => {
   const db = await connectToDatabase();
-  const goal = req.body;
+  const body = req.body;
+  const {_id, type} = body;
   // Insert the event object, which is the test data we pass in
-  await db.collection("goal").replaceOne({"_id": goal._id}, goal, {upsert: true});
+  await db.collection(_type).replaceOne({"_id": _id}, body, {upsert: true});
   const response = {
     statusCode: 200,
     data: JSON.stringify(goal)
