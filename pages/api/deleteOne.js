@@ -1,6 +1,6 @@
 // import connectToDatabase from '@/lib/mongodb';
 
-const handler = async (req, res) => {
+const deleteRecord = async (req, res) => {
   console.log("delete handler called?")
   // const db = await connectToDatabase();
   // const { _id, _type } = req.body
@@ -14,6 +14,6 @@ const handler = async (req, res) => {
   res.json({status: 200})
 };
 
-export default handler;
+export default deleteRecord;
 
 
