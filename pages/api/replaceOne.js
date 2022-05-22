@@ -8,7 +8,7 @@ const handler = async (req, res) => {
   await db.collection(_type).replaceOne({"_id": _id}, body, {upsert: true});
   const response = {
     statusCode: 200,
-    data: JSON.stringify(goal)
+    data: JSON.stringify(body)
   };
   res.json(response);
 };
